@@ -5,3 +5,4 @@ app/views/
 .npm
 passwd
 app/dist
+package-lock.json
