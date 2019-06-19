@@ -7,17 +7,22 @@ $.fn.scrollView = function () {
   });
 }
 
-// function menu scrollTop
+// functions menu scrollTop
 $(".js-menu li > a").on("click", (e) => {
   e.preventDefault();
   const ele = $(e.target);
   const section = ele.attr("href");
   $(section).scrollView();
-  $(".wrapper-menu").addClass('hide');
-  $(".menu-icon").removeClass('open')
+  $(".wrapper-menu").hide();
+  $(".menu-icon").removeClass('open').addClass('close')
 })
 
-$(".menu-icon:not('.open')").on("click", ()=>{
-  console.log('here!')
-  $(".wrapper-menu").removeClass("hide")
+$(".menu-icon.close").on("click", ()=>{
+  $(this).removeClass('close').addClass('open')
+  $(".wrapper-menu").show();
+})
+
+$(".menu-icon.open").on("click", ()=>{
+  $(this).removeClass('open').addClass('close')
+  $(".wrapper-menu").hide();
 })
