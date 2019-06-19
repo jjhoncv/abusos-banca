@@ -91,6 +91,10 @@ const fonts = () =>
   gulp.src(path.src + 'fonts/**/*')
     .pipe(gulp.dest(path.dist + 'statics/fonts'))
 
+const libs = () =>
+  gulp.src(path.src + 'libs/**/*')
+    .pipe(gulp.dest(path.dist + 'statics/libs'))
+
 
 const reload = (done) => {
   server.reload();
@@ -112,6 +116,7 @@ const watch = () => {
   gulp.watch(path.src + 'fonts/*', gulp.series(fonts, reload))
   gulp.watch(path.src + 'icons/*.svg', gulp.series(icons, reload))
   gulp.watch(path.src + 'imgs/*', gulp.series(imgs, reload))
+  gulp.watch(path.src + 'libs/*', gulp.series(imgs, reload))
 }
 
 const build = gulp.series(
@@ -120,6 +125,7 @@ const build = gulp.series(
   css,
   html,
   icons,
+  libs,
   imgs,
   fonts
 );

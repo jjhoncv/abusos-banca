@@ -15,8 +15,6 @@
 
 header
   width 100%
-  background #383838
-  min-height 80px
   display flex
   align-items center
 
@@ -24,9 +22,6 @@ main
   flex 1
   display flex
   justify-content center
-
-  .content
-    padding 20px 0
 
 footer
   background #ecb330
@@ -43,13 +38,28 @@ body
 .hide
   display none
 
-.modal
-  min-height 200px
-  min-width 200px
-  width 300px
-  border 1px solid #ddd
-  position absolute
-  left 0
-  top 50%
-  right 0
-  margin 0 auto
+section
+  width 100%
+  min-height 300px
+
+main
+  flex-direction column
+
+nav
+  position fixed
+  min-width 209px
+  background #ddd
+  .menu-icon
+    &.open
+      .bar1
+        transform rotate(-45deg) translate(-9px, 6px)
+      .bar2
+        opacity 0
+      .bar3
+        transform rotate(45deg) translate(-8px, -8px)
+    div
+      width 22px
+      height 2px
+      background-color #fff
+      margin 6px 0
+      transition 0.4s
