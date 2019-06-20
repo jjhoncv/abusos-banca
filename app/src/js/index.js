@@ -11,18 +11,23 @@ $.fn.scrollView = function () {
 $(".js-menu li > a").on("click", (e) => {
   e.preventDefault();
   const ele = $(e.target);
+  const li = ele.parent();
+  $(".js-menu li").removeClass('active');
+  li.addClass('active')
   const section = ele.attr("href");
   $(section).scrollView();
+
   $(".wrapper-menu").hide();
-  $(".menu-icon").removeClass('open').addClass('close')
+  $("nav").removeClass("open")
+
 })
 
-$(".menu-icon.close").on("click", ()=>{
-  $(this).removeClass('close').addClass('open')
-  $(".wrapper-menu").show();
-})
-
-$(".menu-icon.open").on("click", ()=>{
-  $(this).removeClass('open').addClass('close')
-  $(".wrapper-menu").hide();
+$(".menu-icon").on("click", function () {
+  if ($(this).parent().hasClass('open')) {
+    $(".wrapper-menu").hide();
+    $("nav").removeClass("open")
+  } else {
+    $(".wrapper-menu").show();
+    $("nav").addClass("open")
+  }
 })

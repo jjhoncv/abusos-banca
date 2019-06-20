@@ -1,22 +1,37 @@
 @import '_style'
 
 .content
-  width 95%
-  margin 0 auto
+  margin 0 60px
+  margin-top 27px
+
   p
     margin 15px 0
-
-.logo
-  font-family 'AnotherFlight'
-  font-size 32px
-  color #d1f122ee
-  span
-    margin-left 10px
 
 header
   width 100%
   display flex
-  align-items center
+  background #191718
+  align-items normal
+  .content
+    width 95%
+    margin-top 0
+
+  .foot
+    width 100%
+    text-align center
+    img
+      max-width 100%
+  .logo
+    width 100%
+    text-align center
+    img
+      width 100%
+      max-width 225px
+      @media (min-width: 768px)
+        max-width 300px
+
+.wrapper-header
+    padding-bottom 40px
 
 main
   flex 1
@@ -41,24 +56,98 @@ body
 section
   width 100%
   min-height 300px
+  h2
+    font-family Rajdhani
 
 main
   flex-direction column
 
 nav
   position fixed
-  background #ddd
-  .menu-icon
+  width 135px
+  z-index 1
+  @media (min-width: 769px)
+    background none
+    // width 100%
     &.open
+      background #000
+  @media (max-width: 768px)
+    &.open  
+      background #000
+
+  @media (max-width: 768px)
+    width 100%
+.menu-items
+  display flex
+  flex-direction column
+  align-items center
+  margin-bottom 20px
+  li
+    text-align left
+    width 80px
+    padding 5px 0
+    border-bottom 1px solid #0E0E0E
+    
+    &:last-child
+      border-bottom none
+    &.active
+      a
+        color #FD0F5D
+    a
+      font-family Rajdhani
+      color white
+      font-weight bold
+      font-size 13px
+      &:hover
+        color #FD0F5D
+.menu-logo
+  display flex
+  justify-content center
+  margin 35px 0
+  img
+    height 50px
+
+nav
+  &.open
+    .menu-icon
       .bar1
-        transform rotate(-45deg) translate(-9px, 6px)
+        transform rotate(-45deg) translate(-5px, 5px)
       .bar2
         opacity 0
       .bar3
-        transform rotate(45deg) translate(-8px, -8px)
-    div
-      width 22px
-      height 2px
-      background-color #fff
-      margin 6px 0
-      transition 0.4s
+        transform rotate(45deg) translate(-4px, -4px)
+
+
+.menu-icon
+  margin-left 30px
+  margin-top 30px
+  padding-bottom 30px
+  &.close
+    @media (max-width: 768px)
+      background none
+  div
+    width 15px
+    height 2px
+    background-color #fff
+    margin 4px 0
+    transition 0.4s
+
+section[id="proyect"]
+  background black
+
+section[id="reports"]
+  background #F55488
+
+section[id="graphics"]
+  background #ECE8E7
+
+section[id="service"]
+  background #00A074
+
+section[id="news"]
+  background white
+
+
+footer
+  background #333
+  height 176px

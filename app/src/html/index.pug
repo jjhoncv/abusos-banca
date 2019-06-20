@@ -1,37 +1,57 @@
 extends _layout.pug
 
 block content
-  nav
-    .menu-icon.open #[.bar1] #[.bar2] #[.bar3]
+  nav.open
+    .menu-icon #[.bar1] #[.bar2] #[.bar3]
     .wrapper-menu
       .menu-logo
-        img(src=`${path.static}/imgs/logo-menu.png`)
-      ul.js-menu
-        li.active #[a(href="#home") El Projecto]
-        li #[a(href="#reports") Reportajes]
-        li #[a(href="#graphics") Gráficos]
-        li #[a(href="#service") A su servicio]
-        li #[a(href="#news") Noticias]
+        img(src=`${path.statics}/imgs/logo-menu.png`)
+      ul.menu-items.js-menu
+        li #[a(href="#proyect") EL PROYECTO]
+        li #[a(href="#reports") REPORTAJES]
+        li #[a(href="#graphics") GRAFICOS]
+        li #[a(href="#service") A SU SERVICIO]
+        li #[a(href="#news") NOTICIAS]
   header
     .content
-      .logo
-        img(src=`${path.static}/imgs/logo.png`)        
+      .wrapper-header
+        .foot
+          img(src=`${path.statics}/imgs/ojo-publico-abusos-de-la-banca.png`)                
+        .logo
+          h1
+            img(src=`${path.statics}/imgs/logo.png` alt="abusos de la banca")        
   main
-    section(id="home")
+    section(id="proyect")
       .content
-        p Home
+        h2 EL PROBLEMA PARTE DE UN PROBLEMA EVIDENTE
+        h3 EL SECTOR FINANCIERO ES UNO DE LOS MÁS QUEJADOS POR LOS USUARIOS, SEGÚN EL INSTITUTO
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores repellat nulla delectus in, ducimus quibusdam libero earum magni cum? Fugiat est at quos incidunt, facere et! Debitis facilis sed iusto?
     section(id="reports")
       .content
-        p Reports
+        h2 REPORTAJES_
+        ul.list-countrys
+          li PERU: 4
+          li MEXICO: 2
+          li CHILE: 1
+          li EL SALVADOR: 1
+          li COLOMBIA: 1
+          LI ECUADOR: 1
+        
+        .wrapper-slider
+            ul.slider
+              li
+                img(src="", alt="")
+
+
     section(id="graphics")
       .content
-        p graphics
+        h2 GRÁFICOS_
     section(id="service")
       .content
-        p service
+        h2 A SU SERVICIO_
     section(id="news")
       .content    
-        p news  
+        h2 NOTICIAS_  
 
   footer
     .content
