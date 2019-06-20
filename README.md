@@ -46,7 +46,3 @@ watch logs our project
 ```sh
 make logs
 ```
-
-### url project
-[link](https://jjhoncv.github.io/abusos-banca)
-
